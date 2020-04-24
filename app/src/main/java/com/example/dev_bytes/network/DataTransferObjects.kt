@@ -1,3 +1,5 @@
+@file:Suppress("UNREACHABLE_CODE")
+
 package com.example.dev_bytes.network
 
 import com.example.dev_bytes.database.DatabaseVideo
@@ -47,14 +49,15 @@ fun NetworkVideoContainer.asDomainModel(): List<Video> {
             thumbnail = it.thumbnail)
     }
 
-    fun NetworkVideoContainer.asDatabaseModel(): Array<DatabaseVideo> {
-        return videos.map {
-            DatabaseVideo(
-                title = it.title,
-                description = it.description,
-                url = it.url,
-                updated = it.updated,
-                thumbnail = it.thumbnail)
-        }.toTypedArray()
-    }
+
+}
+fun NetworkVideoContainer.asDatabaseModel(): Array<DatabaseVideo> {
+    return videos.map {
+        DatabaseVideo(
+            title = it.title,
+            description = it.description,
+            url = it.url,
+            updated = it.updated,
+            thumbnail = it.thumbnail)
+    }.toTypedArray()
 }
